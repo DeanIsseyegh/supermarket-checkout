@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/supermarket.iml" filepath="$PROJECT_DIR$/.idea/modules/supermarket.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/supermarket-checkout.iml" filepath="$PROJECT_DIR$/.idea/supermarket-checkout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/supermarket_main.iml" filepath="$PROJECT_DIR$/.idea/modules/supermarket_main.iml" group="supermarket" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/supermarket_test.iml" filepath="$PROJECT_DIR$/.idea/modules/supermarket_test.iml" group="supermarket" />
     </modules>
   </component>
 </project>
