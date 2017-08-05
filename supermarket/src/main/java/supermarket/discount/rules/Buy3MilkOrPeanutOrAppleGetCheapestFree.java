@@ -9,8 +9,11 @@ import java.util.stream.Stream;
 
 public class Buy3MilkOrPeanutOrAppleGetCheapestFree extends BuyXGetYFreeDiscount {
 
+	private static final int NUM_OF_ITEMS_REQUIRED_FOR_DISCOUNT = 3;
+	private static final int NUM_OF_ITEMS_TO_DISCOUNT = 1;
+	
 	public Buy3MilkOrPeanutOrAppleGetCheapestFree(int priority) {
-		super(3, 1, priority);
+		super(NUM_OF_ITEMS_REQUIRED_FOR_DISCOUNT, NUM_OF_ITEMS_TO_DISCOUNT, priority);
 	}
 
 	@Override

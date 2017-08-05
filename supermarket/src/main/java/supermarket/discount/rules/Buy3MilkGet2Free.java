@@ -6,8 +6,11 @@ import java.util.List;
 
 public class Buy3MilkGet2Free extends BuyXGetYFreeDiscount {
 
+	private static final int NUM_OF_ITEMS_REQUIRED_FOR_DISCOUNT = 3;
+	private static final int NUM_OF_ITEMS_TO_DISCOUNT = 2;
+
 	public Buy3MilkGet2Free(int priority) {
-		super(3, 2, priority);
+		super(NUM_OF_ITEMS_REQUIRED_FOR_DISCOUNT, NUM_OF_ITEMS_TO_DISCOUNT, priority);
 	}
 
 	@Override
@@ -17,7 +20,7 @@ public class Buy3MilkGet2Free extends BuyXGetYFreeDiscount {
 
 	@Override
 	protected void applyDiscountOnSet(List<Item> items) {
-		for (int i = 0; i < yFree; i++) {
+		for (int i = 0; i < numItemsToDiscount; i++) {
 			items.get((items.size() - 1) - i).setPrice(0);
 		}
 	}

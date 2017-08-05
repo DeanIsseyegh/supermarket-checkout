@@ -2,6 +2,7 @@ package supermarket.discount;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InOrder;
 import org.mockito.Mockito;
 import supermarket.discount.rules.DiscountRule;
 import supermarket.shoppingitem.Item;
@@ -40,14 +41,20 @@ public class DiscountServiceTest {
 		DiscountRule discount1 = mock(DiscountRule.class);
 		DiscountRule discount2 = mock(DiscountRule.class);
 		DiscountRule discount3 = mock(DiscountRule.class);
-		List<DiscountRule> discounts = Stream.of(discount1, discount2, discount3).collect(Collectors.toList());
+		List<DiscountRule> mockedDiscounts = Stream.of(discount1, discount2, discount3).collect(Collectors.toList());
 		List<Item> items = mockItems();
 
-		when(mockedDiscountFactory.discounts()).thenReturn(discounts);
+		when(discount1.getPriority()).thenReturn(1);
+		when(discount2.getPriority()).thenReturn(3);
+		when(discount3.getPriority()).thenReturn(2);
+		InOrder inOrder = Mockito.inOrder(discount1, discount2, discount3);
+
+		when(mockedDiscountFactory.discounts()).thenReturn(mockedDiscounts);
 		service.applyDiscount(items);
-		verify(discount1, Mockito.times(1)).apply(items);
-		verify(discount2, Mockito.times(1)).apply(items);
-		verify(discount3, Mockito.times(1)).apply(items);
+		inOrder.verify(discount1, Mockito.times(1)).apply(items);
+		inOrder.verify(discount3, Mockito.times(1)).apply(items);
+		inOrder.verify(discount2, Mockito.times(1)).apply(items);
+		inOrder.verifyNoMoreInteractions();
 	}
 
 	private List<Item> mockItems() {

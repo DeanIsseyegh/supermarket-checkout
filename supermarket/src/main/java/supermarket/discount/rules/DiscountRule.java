@@ -18,13 +18,13 @@ public abstract class DiscountRule {
 		applyDiscountOn(itemsToApplyDiscountOn);
 	}
 
-	abstract void applyDiscountOn(List<Item> items);
-
 	List<Item> filterDiscountableItems(List<Item> items) {
 		return items.stream().filter( item -> filterCriteria(item)).collect(Collectors.toList());
 	}
 
 	abstract Boolean filterCriteria(Item item);
+
+	abstract void applyDiscountOn(List<Item> items);
 
 	public int getPriority() {
 		return priority;
