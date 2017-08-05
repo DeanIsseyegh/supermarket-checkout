@@ -49,12 +49,12 @@ public class ReceiptTest {
 	@Test
 	public void Given_MultipleDifferentItems_Then_ReturnAReceiptString() {
 		List<Item> items = Stream.of(
-				mockNewItem("Apple", 10.50),
-				mockNewItem("Apple", 10.50),
+				mockNewItem("Apple", 10.25),
+				mockNewItem("Apple", 10.25),
 				mockNewItem("Banana", 5.40),
 				mockNewItem("Orange", 3.20)
 		).collect(Collectors.toList());
-		String expectedReceipt = Receipt.TITLE + "Apple: £10.50\nApple: £10.50\nBanana: £5.40\nOrange: £3.20\n\nTotal: £29.60";
+		String expectedReceipt = Receipt.TITLE + "Apple: £10.25\nApple: £10.25\nBanana: £5.40\nOrange: £3.20\n\nTotal: £29.10";
 		Assert.assertThat(receipt.generateReceipt(items, currencySymbol), is(expectedReceipt));
 	}
 
