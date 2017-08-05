@@ -9,8 +9,8 @@ import java.util.stream.Stream;
 
 public class Buy3MilkOrPeanutOrAppleGetCheapestFree extends BuyXGetYFreeDiscount {
 
-	public Buy3MilkOrPeanutOrAppleGetCheapestFree() {
-		super(3, 1);
+	public Buy3MilkOrPeanutOrAppleGetCheapestFree(int priority) {
+		super(3, 1, priority);
 	}
 
 	@Override
@@ -22,8 +22,8 @@ public class Buy3MilkOrPeanutOrAppleGetCheapestFree extends BuyXGetYFreeDiscount
 
 	@Override
 	protected Boolean filterCriteria(Item item) {
-		return Stream.of("Milk", "PeanutButterJelly", "Apple").anyMatch(str ->
-				(str.equals(item.getName()) && !item.hasDiscountApplied())
+		return Stream.of("Milk", "PeanutButterJelly", "Apple").anyMatch(itemName ->
+				(itemName.equals(item.getName()) && !item.hasDiscountApplied())
 		);
 	}
 }

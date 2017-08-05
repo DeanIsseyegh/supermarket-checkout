@@ -3,6 +3,8 @@ package supermarket.discount;
 import supermarket.discount.rules.DiscountRule;
 import supermarket.shoppingitem.Item;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class DiscountService {
@@ -15,7 +17,8 @@ public class DiscountService {
 
     public void applyDiscount(List<Item> items) {
 		List<DiscountRule> discounts = factory.discounts();
-		discounts.forEach( discount -> discount.apply(items));
+		Collections.sort(discounts, Comparator.comparing(DiscountRule::getPriority));
+		discounts.stream().forEachOrdered( discount -> discount.apply(items));
     }
 }
 

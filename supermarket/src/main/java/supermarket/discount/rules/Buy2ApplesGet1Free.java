@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Buy2ApplesGet1Free extends BuyXGetYFreeDiscount {
 
-	public Buy2ApplesGet1Free() {
-		super(2, 1);
+	public Buy2ApplesGet1Free(int priority) {
+		super(2, 1, priority);
 	}
 
 	@Override

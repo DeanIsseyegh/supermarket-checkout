@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Buy3MilkGet2Free extends BuyXGetYFreeDiscount {
 
-	public Buy3MilkGet2Free() {
-		super(3, 2);
+	public Buy3MilkGet2Free(int priority) {
+		super(3, 2, priority);
 	}
 
 	@Override

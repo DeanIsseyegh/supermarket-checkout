@@ -36,7 +36,7 @@ public class DiscountServiceTest {
 	}
 
 	@Test
-	public void Given_MultipleItems_Then_ApplyDiscountsOnAllOfThem() {
+	public void Given_MultipleItems_Then_ApplyDiscountsOnAllOfThemInOrderOfPriority() {
 		DiscountRule discount1 = mock(DiscountRule.class);
 		DiscountRule discount2 = mock(DiscountRule.class);
 		DiscountRule discount3 = mock(DiscountRule.class);

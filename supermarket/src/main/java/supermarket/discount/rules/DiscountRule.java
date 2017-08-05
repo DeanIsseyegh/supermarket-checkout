@@ -7,6 +7,12 @@ import java.util.stream.Collectors;
 
 public abstract class DiscountRule {
 
+	private int priority;
+
+	public DiscountRule(int priority) {
+		this.priority = priority;
+	}
+
 	public void apply(List<Item> items) {
 		List<Item> itemsToApplyDiscountOn = filterDiscountableItems(items);
 		applyDiscountOn(itemsToApplyDiscountOn);
@@ -19,5 +25,9 @@ public abstract class DiscountRule {
 	}
 
 	abstract Boolean filterCriteria(Item item);
+
+	public int getPriority() {
+		return priority;
+	}
 
 }

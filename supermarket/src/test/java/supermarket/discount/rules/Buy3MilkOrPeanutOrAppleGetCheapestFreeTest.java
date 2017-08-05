@@ -18,7 +18,7 @@ public class Buy3MilkOrPeanutOrAppleGetCheapestFreeTest {
 
 	@Before
 	public void setup() {
-		this.rule = new Buy3MilkOrPeanutOrAppleGetCheapestFree();
+		this.rule = new Buy3MilkOrPeanutOrAppleGetCheapestFree(1);
 	}
 
 	@Test

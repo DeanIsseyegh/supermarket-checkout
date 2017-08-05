@@ -9,7 +9,8 @@ public abstract class BuyXGetYFreeDiscount extends DiscountRule {
 	protected int xNum;
 	protected int yFree;
 
-	public BuyXGetYFreeDiscount(int xNum, int yFree) {
+	public BuyXGetYFreeDiscount(int xNum, int yFree, int priority) {
+		super(priority);
 		this.xNum = xNum;
 		this.yFree = yFree;
 	}

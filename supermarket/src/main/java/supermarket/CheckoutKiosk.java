@@ -9,9 +9,9 @@ import java.util.List;
 
 public class CheckoutKiosk {
 
-    DiscountService discountService;
-    Receipt receipt;
-    Currency currency;
+    private DiscountService discountService;
+	private Receipt receipt;
+	private Currency currency;
 
     public CheckoutKiosk(DiscountService discountService, Receipt receipt, Currency currency) {
         this.discountService = discountService;

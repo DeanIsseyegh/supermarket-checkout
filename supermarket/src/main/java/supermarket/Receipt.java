@@ -1,8 +1,11 @@
 package supermarket;
 
+import supermarket.discount.rules.DiscountRule;
 import supermarket.shoppingitem.Item;
 
 import java.math.BigDecimal;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,6 +14,7 @@ public class Receipt {
 	public static final String TITLE = "***DEANS BEANS SHOPPING RECEIPT***\n";
 
     public String generateReceipt(List<Item> items, String currencySymbol) {
+		Collections.sort(items, Comparator.comparing(Item::getName));
 		String formattedItems = formatLineItems(items, currencySymbol);
 		BigDecimal totalPrice = calcTotalPrice(items);
         return TITLE + "" + formattedItems + "\nTotal: " + currencySymbol + totalPrice.setScale(2, BigDecimal.ROUND_DOWN);
