@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 public class Buy2ApplesGet1FreeTest {
 
 	private final BigDecimal applePrice = new Apple().getPrice();
-	private BuyXGetYFreeDiscount rule;
+	private Buy2ApplesGet1Free rule;
 
 	@Before
 	public void setup() {
@@ -100,7 +100,6 @@ public class Buy2ApplesGet1FreeTest {
 		assertPriceAndDiscount(items.get(3), dummyPrice, false);
 	}
 
-	//TO DO: Chuck in util
 	private void assertPriceAndDiscount(Item item, BigDecimal expectedPrice, Boolean hasDiscountApplied) {
 		assertThat(item.getPrice(), is(expectedPrice));
 		assertThat(item.hasDiscountApplied(), is(hasDiscountApplied));

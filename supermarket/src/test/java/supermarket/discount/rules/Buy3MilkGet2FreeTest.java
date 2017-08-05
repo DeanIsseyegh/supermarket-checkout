@@ -17,7 +17,7 @@ public class Buy3MilkGet2FreeTest {
 
 	private final BigDecimal milkPrice = new Milk().getPrice();
 
-	private BuyXGetYFreeDiscount rule;
+	private Buy3MilkGet2Free rule;
 
 	@Before
 	public void setup() {
@@ -63,7 +63,6 @@ public class Buy3MilkGet2FreeTest {
 		assertPriceAndDiscount(items.get(6), milkPrice, false);
 	}
 
-	//TO DO: Chuck in util
 	private void assertPriceAndDiscount(Item item, BigDecimal expectedPrice, Boolean hasDiscountApplied) {
 		assertThat(item.getPrice(), is(expectedPrice));
 		assertThat(item.hasDiscountApplied(), is(hasDiscountApplied));
