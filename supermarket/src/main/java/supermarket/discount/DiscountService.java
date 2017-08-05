@@ -1,5 +1,6 @@
 package supermarket.discount;
 
+import supermarket.discount.rules.DiscountRule;
 import supermarket.shoppingitem.Item;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public class DiscountService {
 	}
 
     public void applyDiscount(List<Item> items) {
-		List<Discount> discounts = factory.discounts();
+		List<DiscountRule> discounts = factory.discounts();
 		discounts.forEach( discount -> discount.apply(items));
     }
 }

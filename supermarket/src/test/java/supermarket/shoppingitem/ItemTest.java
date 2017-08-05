@@ -22,6 +22,14 @@ public class ItemTest {
 	}
 
 	@Test
+	public void CanModifyPrice() throws Exception {
+		Item item = new DummyItem("Apple", 10.00);
+		item.setPrice(5.00);
+		assertThat(item.getPrice(), is(new BigDecimal(5.00)));
+	}
+
+
+	@Test
 	public void Given_NoDiscountApplied_Return_False() {
 		Item item = new DummyItem("Apple", 10.00);
 		assertThat(item.hasDiscountApplied(), is(false));

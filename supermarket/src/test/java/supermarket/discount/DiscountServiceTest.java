@@ -3,6 +3,7 @@ package supermarket.discount;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import supermarket.discount.rules.DiscountRule;
 import supermarket.shoppingitem.Item;
 
 import java.util.List;
@@ -26,8 +27,8 @@ public class DiscountServiceTest {
 
 	@Test
 	public void Given_OneItem_Then_ApplyDiscounts() {
-		Discount discount = mock(Discount.class);
-		List<Discount> discounts = Stream.of(discount).collect(Collectors.toList());
+		DiscountRule discount = mock(DiscountRule.class);
+		List<DiscountRule> discounts = Stream.of(discount).collect(Collectors.toList());
 		List<Item> items = mockItems();
 		when(mockedDiscountFactory.discounts()).thenReturn(discounts);
 		service.applyDiscount(items);
@@ -36,10 +37,10 @@ public class DiscountServiceTest {
 
 	@Test
 	public void Given_MultipleItems_Then_ApplyDiscountsOnAllOfThem() {
-		Discount discount1 = mock(Discount.class);
-		Discount discount2 = mock(Discount.class);
-		Discount discount3 = mock(Discount.class);
-		List<Discount> discounts = Stream.of(discount1, discount2, discount3).collect(Collectors.toList());
+		DiscountRule discount1 = mock(DiscountRule.class);
+		DiscountRule discount2 = mock(DiscountRule.class);
+		DiscountRule discount3 = mock(DiscountRule.class);
+		List<DiscountRule> discounts = Stream.of(discount1, discount2, discount3).collect(Collectors.toList());
 		List<Item> items = mockItems();
 
 		when(mockedDiscountFactory.discounts()).thenReturn(discounts);

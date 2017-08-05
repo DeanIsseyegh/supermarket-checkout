@@ -21,6 +21,10 @@ public abstract class Item {
 		return price;
 	}
 
+	public void setPrice(double newPrice) {
+		price = new BigDecimal(newPrice);
+	}
+
 	public void markAsDiscounted() {
 		hasDiscountApplied = true;
 	}
