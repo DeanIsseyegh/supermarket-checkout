@@ -1,11 +1,10 @@
-package supermarket.discounts;
+package supermarket.discount;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-import supermarket.Item;
+import supermarket.shoppingitem.Item;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

@@ -1,4 +1,4 @@
-package supermarket.exceptions;
+package supermarket.exception;
 
 public class NoItemsException extends Exception {
 }

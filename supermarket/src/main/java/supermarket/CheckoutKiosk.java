@@ -1,7 +1,8 @@
 package supermarket;
 
-import supermarket.exceptions.NoItemsException;
-import supermarket.discounts.DiscountService;
+import supermarket.exception.NoItemsException;
+import supermarket.discount.DiscountService;
+import supermarket.shoppingitem.Item;
 
 import java.util.Currency;
 import java.util.List;

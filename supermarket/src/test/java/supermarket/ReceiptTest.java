@@ -3,10 +3,9 @@ package supermarket;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import supermarket.shoppingitem.Item;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Currency;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +15,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
 import static org.hamcrest.CoreMatchers.is;
 
 public class ReceiptTest {

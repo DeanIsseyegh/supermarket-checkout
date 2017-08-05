@@ -1,6 +1,6 @@
-package supermarket.discounts;
+package supermarket.discount;
 
-import supermarket.Item;
+import supermarket.shoppingitem.Item;
 
 import java.util.List;
 

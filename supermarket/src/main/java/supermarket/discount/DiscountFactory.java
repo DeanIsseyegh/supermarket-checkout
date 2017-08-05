@@ -1,4 +1,4 @@
-package supermarket.discounts;
+package supermarket.discount;
 
 import java.util.ArrayList;
 import java.util.List;

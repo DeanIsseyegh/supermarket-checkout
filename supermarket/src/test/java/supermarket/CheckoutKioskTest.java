@@ -3,8 +3,9 @@ package supermarket;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import supermarket.exceptions.NoItemsException;
-import supermarket.discounts.DiscountService;
+import supermarket.exception.NoItemsException;
+import supermarket.discount.DiscountService;
+import supermarket.shoppingitem.Item;
 
 import java.util.ArrayList;
 import java.util.Currency;
