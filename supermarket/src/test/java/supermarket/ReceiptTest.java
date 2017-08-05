@@ -33,7 +33,7 @@ public class ReceiptTest {
 	public void Given_OneItem_Then_ReturnAReceiptString() {
 		Item item = mockNewItem("Apple", 10.50);
 		List<Item> items = Stream.of(item).collect(Collectors.toList());
-		String expectedReceipt = Receipt.TITLE + "Apple: £10.50\nTotal: £10.50";
+		String expectedReceipt = Receipt.TITLE + "Apple: £10.50\n\nTotal: £10.50";
 		Assert.assertThat(receipt.generateReceipt(items, currencySymbol), is(expectedReceipt));
 	}
 
