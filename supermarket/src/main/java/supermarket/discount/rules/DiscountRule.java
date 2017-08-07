@@ -9,6 +9,12 @@ public abstract class DiscountRule {
 
 	private int priority;
 
+	/**
+	 *
+	 * @param priority - indicates the priority the discount rule takes over other discount rules.
+	 *                    Discount rules will run in order of highest priority to lowest.
+	 *                    The larger the number, the higher the priority.
+	 */
 	public DiscountRule(int priority) {
 		this.priority = priority;
 	}
@@ -18,7 +24,7 @@ public abstract class DiscountRule {
 		applyDiscountOn(itemsToApplyDiscountOn);
 	}
 
-	List<Item> filterDiscountableItems(List<Item> items) {
+	private List<Item> filterDiscountableItems(List<Item> items) {
 		return items.stream().filter( item -> filterCriteria(item)).collect(Collectors.toList());
 	}
 

@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 
 public abstract class Item {
 
+	/**
+	 * Given more time, I would have made name an enum so we could update the name
+	 * of an item and how it would appear on the receipt, without having to affect other bits
+	 * of logic.
+	 */
 	private String name;
 	private BigDecimal price;
 	private Boolean hasDiscountApplied = false;
